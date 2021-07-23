@@ -19,9 +19,9 @@ import java.util.UUID;
 public class UserController {
 
     private final UserService userService;
-    private final UserRepository<User, UUID> repository;
+    private final UserRepository<User, String> repository;
 
-    public UserController(UserService userService, UserRepository<User, UUID> repository) {
+    public UserController(UserService userService, UserRepository<User, String> repository) {
         this.userService = userService;
         this.repository = repository;
     }
@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> find(@PathVariable("id") UUID id) {
+    public ResponseEntity<User> find(@PathVariable("id") String id) {
         Optional<User> item = userService.find(id);
         return ResponseEntity.of(item);
     }
@@ -57,7 +57,7 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<User> update(
-            @PathVariable("id") UUID id,
+            @PathVariable("id") String id,
             @RequestBody User updatedUser) {
 
         Optional<User> updated = Optional.of(repository.save(updatedUser));
@@ -74,7 +74,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<User> delete(@PathVariable("id") UUID id) {
+    public ResponseEntity<User> delete(@PathVariable("id") String id) {
         userService.delete(id);
         return ResponseEntity.noContent().build();
     }

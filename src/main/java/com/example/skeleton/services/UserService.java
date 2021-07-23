@@ -13,9 +13,9 @@ import java.util.UUID;
 
 @Service
 public class UserService {
-    private final UserRepository<User, UUID> repository;
+    private final UserRepository<User, String> repository;
 
-    public UserService(UserRepository<User, UUID> repository) {
+    public UserService(UserRepository<User, String> repository) {
         this.repository = repository;
     }
 
@@ -26,7 +26,7 @@ public class UserService {
         return list;
     }
 
-    public Optional<User> find(UUID id) {
+    public Optional<User> find(String id) {
         return repository.findById(id);
     }
 
@@ -71,7 +71,7 @@ public class UserService {
             return repository.save(copy);
     }
 
-    public void delete(UUID id) {
+    public void delete(String id) {
         repository.deleteById(id);
     }
 

@@ -10,7 +10,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface UserRepository<V extends User, U> extends CrudRepository<User, UUID> {
+public interface UserRepository<V extends User, U> extends CrudRepository<User, String> {
     public Vendor findByFirstName(String firstName);
 
     public List<Vendor> findByLastName(String lastName);

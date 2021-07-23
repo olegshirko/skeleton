@@ -23,7 +23,7 @@ public class Vendor extends User {
     private String qbId;
 
     @Builder
-    public Vendor(UUID id, String firstName, String middleName, String lastName, List<Email> email, Number phone, String picture, Address address, String type, List<License> licenseList, List<Insurance> insuranceList, List<Trade> tradeList, String companyName, String promoCode, Boolean tosAccepted, Boolean payoutEnabled, String stripeId, String qbId) {
+    public Vendor(String id, String firstName, String middleName, String lastName, List<Email> email, Number phone, String picture, Address address, String type, List<License> licenseList, List<Insurance> insuranceList, List<Trade> tradeList, String companyName, String promoCode, Boolean tosAccepted, Boolean payoutEnabled, String stripeId, String qbId) {
         super(id, firstName, middleName, lastName, email, phone, picture, address, type);
         this.licenseList = licenseList;
         this.insuranceList = insuranceList;

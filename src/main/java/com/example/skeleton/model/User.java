@@ -24,7 +24,7 @@ import java.util.UUID;
 @JsonTypeIdResolver(UserResolver.class)
 public abstract class User {
     @Id
-    private UUID id;
+    private String id;
     private String firstName;
     private String middleName;
     private String lastName;

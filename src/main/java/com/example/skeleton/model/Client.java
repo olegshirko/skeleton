@@ -16,7 +16,7 @@ public class Client extends User{
     List<ClientType> clientType;
 
     @Builder
-    public Client(UUID id, String firstName, String middleName, String lastName, List<Email> email, Number phone, String picture, Address address, String type, List<ClientType> clientType) {
+    public Client(String id, String firstName, String middleName, String lastName, List<Email> email, Number phone, String picture, Address address, String type, List<ClientType> clientType) {
         super(id, firstName, middleName, lastName, email, phone, picture, address, type);
         this.clientType = clientType;
     }
